@@ -1,0 +1,36 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model ExploreTexas.Models.Post
+@{
+    Layout = "_Layout";
+}
+
+
+<h1>Create blog Post</h1>
+
+<fieldset>
+    <form asp-action="BlogCreate" asp-controller="Blog" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="input-validation-error"></div>
+
+
+        <p>
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" placeholder="Blog Post Title" />
+            <span asp-validation-for="Title"></span>
+        </p>
+
+        <p>
+            <label asp-for="Body"></label>
+            <textarea asp-for="Body" class="form-control" placeholder="Blog post content"></textarea>
+            <span asp-validation-for="Body"></span>
+        </p>
+        <p class="form-group">
+            <label asp-for="ImageUpload" class="control-label"></label>
+            <input asp-for="ImageUpload" accesskey="images/*" />
+            <span asp-validation-for="ImageUpload"></span>
+        </p>
+        <p>
+            <button type="submit">Create Post</button>
+        </p>
+    </form>
+
+</fieldset>

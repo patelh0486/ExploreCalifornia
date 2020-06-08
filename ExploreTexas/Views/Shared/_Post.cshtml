@@ -1,0 +1,19 @@
+﻿@inject ExploreTexas.Models.FormattingService Format
+@model ExploreTexas.Models.Post
+
+
+<article class="blog-post"> 
+    <h1>
+        @Html.ActionLink((string)Model.Title, "Post", "Blog",
+                       new { year = Model.Posted.Year, month = Model.Posted.Month, key = Model.Id })
+    </h1>
+    <div class="details">
+        Posted <span>@Format.AsReadableDate(Model.Posted)</span> by <span>@Model.Author</span>
+    </div>
+    <div>
+        <img src="@Url.Content("~/Images/"+Model.ImageName)" alt="Alternate Text" asp-append-version="true" width="400px" height="250px"/>
+    </div>
+    <div class="content">
+        @Model.Body
+    </div>
+</article>

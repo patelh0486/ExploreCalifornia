@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "_SupportL";
+}
+
+    <form asp-for="name" asp-action="hbo" asp-controller="Support">
+        <fieldset>
+            <legend><strong>Quick Support</strong></legend>
+            <p>
+                <label asp-for="Name">Name:</label>
+                <input asp-for="Name">
+            </p>
+            <p>
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email">
+            </p>
+            <p>
+                <label asp-for="Mobile">Mobile:</label>
+                <input asp-for="Mobile">
+            </p>
+            <p>
+                <label asp-for="TourID">Tour Name:</label>
+                <input asp-for="TourID">
+            </p>
+
+            <p>
+                <label asp-for="Comments">Comments </label>
+                <br />
+                <textarea asp-for="Comments" cols="45" rows="5" tabindex="60"></textarea>
+            </p>
+            <p>
+                <input type="submit" />
+            </p>
+        </fieldset>
+    </form>
